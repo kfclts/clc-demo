@@ -35,8 +35,8 @@ jobs:
       - run:
           name: Run tests
           command: npm test
-      - setup_remote_docker:
-          docker_layer_caching: true
+      # - setup_remote_docker:    (must upgrade plan)
+      #     docker_layer_caching: true
       - run:
           name: Build and push Docker image
           command: |
