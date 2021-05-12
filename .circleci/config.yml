@@ -36,6 +36,7 @@ jobs:
           name: Run tests
           command: npm test
       - setup_remote_docker:
+          version: 19.03.13
           # If set to true, must upgrade plan
           docker_layer_caching: false
       - run:
