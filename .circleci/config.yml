@@ -47,6 +47,7 @@ jobs:
       - run:
           name: Build and push Docker image
           command: |
+            cd ~/project/clc-react/
             docker build -t kfclts/$IMAGE_NAME .
             echo $DOCKER_PWD | docker login -u $DOCKER_LOGIN --password-stdin
             docker push kfclts/$IMAGE_NAME
