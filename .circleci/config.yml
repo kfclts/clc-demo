@@ -23,7 +23,7 @@ jobs:
       # Checkout the code as the first step.
       - checkout
       - node/install-packages:
-        app-dir: ~/project/clc-react/
+          app-dir: ~/project/clc-react/
       - run:
           name: Setup VirtualEnvs
           command: |
