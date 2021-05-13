@@ -22,6 +22,8 @@ jobs:
     steps:
       # Checkout the code as the first step.
       - checkout
+      - node/install-packages:
+        app-dir: ~/project/clc-react/
       - run:
           name: Setup VirtualEnvs
           command: |
@@ -37,8 +39,6 @@ jobs:
       #     pkg-manager: yarn
       - run:
           name: Run tests
-          path: project/clc-react
-          app-dir: project/clc-react
           command: |
             npm test
       - setup_remote_docker:
