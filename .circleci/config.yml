@@ -37,7 +37,7 @@ jobs:
       - run:
           name: Run tests
           command: npm test
-          path: apps/my_cms_web/asset
+          path: ~/project/clc-react/
       - setup_remote_docker:
           version: 19.03.13
           # If set to true, must upgrade plan
