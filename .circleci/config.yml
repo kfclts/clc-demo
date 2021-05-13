@@ -28,7 +28,7 @@ jobs:
           command: |
             pwd
             ls -al
-            less package.json
+            less ~/clc-react/package.json
             echo 'export IMAGE_NAME=clc-react-docker' >> $BASH_ENV
       # Next, the node orb's install-packages step will install the dependencies from a package.json.
       # The orb install-packages step will also automatically cache them for faster future runs.
