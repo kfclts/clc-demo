@@ -37,10 +37,10 @@ jobs:
       # If you are using yarn instead npm, remove the line above and uncomment the two lines below.
       # - node/install-packages:
       #     pkg-manager: yarn
-      - run:
-          name: Run tests
-          command: |
-            npm test
+      - run: cd ~/project/clc-react && npm run test
+          # name: Run tests
+          # command: |
+          #   npm test
       - setup_remote_docker:
           version: 19.03.13
           # If set to true, must upgrade plan
