@@ -45,7 +45,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="button">
-        <div>My String</div>
+        <div>My Sons</div>
         <div><button onClick={this.FIRST}>First</button></div>
         <div><button onClick={this.SECOND}>Second</button></div>
         <div><button onClick={this.THIRD}>Third</button></div>
