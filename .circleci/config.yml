@@ -50,6 +50,18 @@ jobs:
             docker build -t kfclts/$IMAGE_NAME .
             echo $DOCKER_PWD | docker login -u $DOCKER_LOGIN --password-stdin
             docker push kfclts/$IMAGE_NAME
+  eb-demo:
+    docker:
+      - image: "cimg/base:stable"
+    steps:
+      - checkout
+      - eb/setup
+      - run:
+          command: |
+            eb create bean
+            eb deploy bean
+            eb status
+          name: You may now use the EB CLI within this job
 workflows:
   # Below is the definition of your workflow.
   # Inside the workflow, you provide the jobs you want to run, e.g this workflow runs the build-and-test job above.
@@ -57,12 +69,6 @@ workflows:
   # For more details on extending your workflow, see the configuration docs: https://circleci.com/docs/2.0/configuration-reference/#workflows
   sample:
     jobs:
-      - build-and-test
+      # - build-and-test
       # For running simple node tests, you could optionally use the node/test job from the orb to replicate and replace the job above in fewer lines.
-      # - node/test
-      - eb/deploy:
-          environment-name: bean
-          filters:
-            branches:
-              only:
-                - main
+      - eb-demo
