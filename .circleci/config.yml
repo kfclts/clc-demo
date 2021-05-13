@@ -20,7 +20,8 @@ jobs:
     # CircleCI will report the results back to your VCS provider.
     steps:
       # Checkout the code as the first step.
-      - checkout
+      - checkout:
+            path: ~/project/clc-react/
       - run:
           name: Setup VirtualEnvs
           command: |
@@ -37,7 +38,6 @@ jobs:
       - run:
           name: Run tests
           command: npm test
-          path: ~/project/clc-react/
       - setup_remote_docker:
           version: 19.03.13
           # If set to true, must upgrade plan
