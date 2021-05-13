@@ -46,9 +46,11 @@ class App extends React.Component {
     return (
       <div className="button">
         <div>My Sons</div>
-        <div><button onClick={this.FIRST}>First</button></div>
-        <div><button onClick={this.SECOND}>Second</button></div>
-        <div><button onClick={this.THIRD}>Third</button></div>
+        <div>
+          <button onClick={this.FIRST}>First</button>
+          <button onClick={this.SECOND}>Second</button>
+          <button onClick={this.THIRD}>Third</button>
+        </div>
         <div className="App">
           <img src={this.state.photourl} alt="Background" style={{ height: '600px' }} />;
         </div>
