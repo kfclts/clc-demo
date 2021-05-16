@@ -45,7 +45,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="button">
-        <div>My Son</div>
+        <div>My lovely Sons</div>
         <div>
           <button onClick={this.FIRST}>First</button>
           <button onClick={this.SECOND}>Second</button>
